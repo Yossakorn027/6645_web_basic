@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+       body{
+        margin: 0;
+        padding: 0;
+        font-family: Merriweather, 'charm', sans-serif;
+        background: rgb(13,135,164);
+        background: linear-gradient(90deg, rgba(13,135,164,1) 31%, rgba(10,238,205,1) 100%);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+
+       }
+       .container{
+        background-color: white;
+        width: 700px;
+        border-radius: 8px;
+        overflow: hidden;
+        display: flex;
+       
+       }
+       .left-side{
+        background-image: url("images/univers.avif");
+        background-size: 200%;
+        color: rgb(11, 190, 214);
+        background-position: center ;
+        background-blend-mode: darken;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 40px;
+        text-align: center;
+        text-transform: uppercase;
+        width: 40%;
+        
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        flex-direction: column;
+
+}
+       .right-side{
+        padding: 40px;
+        width: 40px;
+        form {
+            label{
+                display: block;
+                font-size: 14px;
+                margin-bottom: auto;
+            }
+            input {
+                width: 100%;
+                padding: 8px;
+                box-sizing: border-box;
+                margin-bottom: 20px;
+            }
+            bottom{
+                width: 100%;
+                padding: 8px;
+                background-color: rgb(240, 132, 0);
+                border: none;
+                color: white;
+                font-size: 16px;
+                cursor: pointer;
+                margin-top: 8px;
+            }
+        
+        }
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <h1>Information Technology</h1>
+            <p>ยินดีต้อนรับเข้าสู่เว็ปไซต์การเรียนการสอนวิชาการ ออกเเบบเเละพัฒนาเว็บไซต์</p>
+        </div>
+        <div class="right-side">
+            <h2>Login</h2>
+            <from action="" method="post">
+                <label for="">Username</label>
+                <input type="text" name="username" i="username" required>
+                <label for="">password</label>
+                <input type="text" name="password" i="password" required>
+                <button type="submit">Login</button>
+            </from>
+            <p>Forget <a href="#"> Password?</a></p>
+            <p>Don't have an account? <a href="">Register</a></p>
+            <a href="http://127.0.0.1:5500/index.html">back to home</a>
+        </div>
+
+
+    </div>
+</body>
+</html>
