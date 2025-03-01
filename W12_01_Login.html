@@ -14,115 +14,137 @@
         font-family: Merriweather, 'charm', sans-serif;
         background: rgb(13,135,164);
         background: linear-gradient(90deg, rgba(13,135,164,1) 31%, rgba(10,238,205,1) 100%);
-
         display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-
-
-       }
-       .container{
-        background-color: white;
-        width: 700px;
-        border-radius: 8px;
-        overflow: hidden;
-        display: flex;
-       
-       }
-       .left-side{
-        background-image: url("images/univers.avif");
-        background-size: 200%;
-        color: rgb(11, 190, 214);
-        background-position: center ;
-        background-blend-mode: darken;
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: 40px;
-        text-align: center;
-        text-transform: uppercase;
-        width: 40%;
-        
-        display: flex;
-        justify-content: center;
-        align-items:center;
-        flex-direction: column;
-
-}
-       .right-side{
-        padding: 40px;
-        width: 40px;
-        form {
-            label{
-                display: block;
-                font-size: 14px;
-                margin-bottom: auto;
-            }
-            input {
-                width: 100%;
-                padding: 8px;
-                box-sizing: border-box;
-                margin-bottom: 20px;
-            }
-            bottom{
-                width: 100%;
-                padding: 8px;
-                background-color: rgb(240, 132, 0);
-                border: none;
-                color: white;
-                font-size: 16px;
-                cursor: pointer;
-                margin-top: 8px;
-            }
-        
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-       }
+        .container{
+            background-color: white; 
+            width: 700px;
+            border-radius: 10px;
+            display: flex;
+            overflow: hidden;
+
+        }
+        .left-side{
+            padding: 60px;
+            width: 60%;
+            background-image: url(imges/univers.jpg);
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: darken;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: rgb(255, 255, 255);          
+            text-align: center;
+            text-transform: uppercase;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .right-side{
+            padding: 40px;
+            width: 40%;
+            form{
+                label{
+                    display: block;
+                    font-size: 14px;
+                }
+                input{
+                    width: 100%;
+                    padding: 4px;
+                    box-sizing: border-box;
+                    margin-bottom: 8px;
+                    max-width: 400px;
+                }
+            }
+        }
+        .right-side h2 {
+    text-align: center; 
+    width: 100%;
+}
+        button{
+            width: 100%;
+            padding: 8px;
+            background-color: rgb(0, 34, 226);
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 8px;
+            max-width: 400px;
+            }
+           
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                width: 95%;
+                max-width: 430px;
+            }
+            .left-side {
+                width: 100%;
+                height: 50%; 
+                padding: 20px;
+            }
+            .right-side {
+                width: 100%;
+                height: 50vh; 
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+
+
+
+
+
     </style>
 </head>
 <body>
     <div class="container">
         <div class="left-side">
             <h1>Information Technology</h1>
-            <p>ยินดีต้อนรับเข้าสู่เว็ปไซต์การเรียนการสอนวิชาการ ออกเเบบเเละพัฒนาเว็บไซต์</p>
+            <p>ยินดีตอนรับเข้าสู่เว็ปไซต์การเรียนการสอนวิชาเทคโนโลยีสารสนเทศ</p>
         </div>
         <div class="right-side">
             <h2>Login</h2>
-            <from action="loginForm" method="post">
-                <label for="">Username</label>
+            <form action="" id="loginForm" method="post">
+                <label for="username">Username:</label>
                 <input type="text" name="username" id="username" required>
-                <label for="">password</label>
-                <input type="text" name="password" id="password" required>
-                <button type="submit">Login</button>
-            </from>
-            <p>Forget <a href="#"> Password?</a></p>
-            <p>Don't have an account? <a href="#">Register</a></p>
-            <a href="index.html">back to home</a>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required>
+                <button type="submit"onclick="">Login</button>
+            </form>
+            <p>Forgot <a href="">Password?</a></p>
+            <p>Don't have an accout? <a href="#">Register</a></p>
         </div>
-
     </div>
-   
-    <script>
-        // เพิ่ม event listener ให้กับฟอร์มที่มี id เป็น "loginForm"
-        // เมื่อผู้ใช้กด submit จะเรียกใช้ฟังก์ชันที่กำหนด
+
+       <script>
+        
         document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // ป้องกันการโหลดหน้าใหม่เมื่อกดปุ่ม submit
+            event.preventDefault(); 
    
-            // ดึงค่าที่ผู้ใช้ป้อนจาก input field (username และ password) และตัดช่องว่างด้านหน้า/หลังออก
+           
             let username = document.getElementById("username").value.trim();
             let password = document.getElementById("password").value.trim();
-            let errorMsg = document.getElementById("errorMsg"); // อ้างอิงถึง div ที่ใช้แสดงข้อความ error
-   
-            // ตรวจสอบว่าผู้ใช้กรอกข้อมูลครบหรือไม่
+            let errorMsg = document.getElementById("errorMsg"); 
+          
             if (username === "" || password === "") {
-                errorMsg.textContent = "กรุณากรอก Username และ Password"; // แสดงข้อความแจ้งเตือน
-                return; // ออกจากฟังก์ชันทันที ไม่ดำเนินการตรวจสอบต่อ
+                errorMsg.textContent = "กรุณากรอก Username และ Password"; 
+                return; 
             }
    
-            // ตรวจสอบว่าข้อมูลที่ป้อนตรงกับค่าที่กำหนดไว้หรือไม่ (username: "admin", password: "1234")
+            
             if (username === "admin" && password === "1111") {
-                //alert("เข้าสู่ระบบสำเร็จ!"); // แจ้งเตือนผู้ใช้ว่าล็อกอินสำเร็จ
-                window.location.href = "W13_01_webResponsive"; // เปลี่ยนหน้าไปยังเป้าหมาย"
+                
+                window.location.href = "W13_01_webResponsive.html"; 
             } else {
-                errorMsg.textContent = "Username หรือ Password ไม่ถูกต้อง"; // แสดงข้อความ error เมื่อป้อนข้อมูลผิด
+                errorMsg.textContent = "Username หรือ Password ไม่ถูกต้อง"; 
             }
         });
     </script>
